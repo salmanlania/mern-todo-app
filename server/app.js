@@ -72,23 +72,18 @@ app.put("/update-todo/:id", async (req, res) => {
 })
 
 app.delete("/delete-todo", async (req, res) => {
-    console.log(req.query, "query")
     await TodoModel.findByIdAndDelete(req.query.id)
     res.json({
         message: "Successfully deleted!",
         data: null,
         status: true
     })
-    alert(res.message)
 })
 
 app.post("/delete-all", async (req, res) => {
     try {
-
         const body = req.body
-        console.log(body.ids, "body")
         const response = await TodoModel.deleteMany({ _id: body.ids })
-        console.log("response", response)
         res.json({
             message: "ALL DELETED",
             status: true
