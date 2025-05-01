@@ -13,7 +13,7 @@ app.use(cors())
 const URL = `mongodb+srv://salmanlania:Salman123@cluster0.ycsrpox.mongodb.net/olxClone`;
 
 mongoose.connect(URL)
-    .then(res => console.log("MONGODB SUCCESSFULLY CONNECTED!"))
+    .then(res => console.log("MONGODB SUCCESSFULLY CONNECTED!!"))
     .catch(err => console.log("MONGODB ERROR", err))
 
 app.post("/addTodo", async (req, res) => {
